@@ -1,6 +1,4 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-// import { fromJS } from 'immutable';
-// import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
@@ -17,10 +15,10 @@ export default function configureStore(initialState = {}) {
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers =
-    process.env.NODE_ENV !== 'production' &&
+  process.env.NODE_ENV !== 'production' &&
     typeof window === 'object' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
       : compose;
   /* eslint-enable */
 
@@ -36,11 +34,11 @@ export default function configureStore(initialState = {}) {
   store.injectedReducers = {}; // Reducer registry
   store.injectedSagas = {}; // Saga registry
 
-  // Make reducers hot reloadable, see http://mxs.is/googmo
-  /* istanbul ignore next */
-  if (module.hot) {
+  if(module.hot) {
+    // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      store.replaceReducer(createReducer(store.injectedReducers));
+      const nextReducer = require('../reducers').default;
+      store.replaceReducer(nextReducer);
     });
   }
 

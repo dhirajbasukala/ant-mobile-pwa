@@ -1,44 +1,54 @@
-.ant-layout-header.header{
-  padding: 0;
-  background: #fff;
-  height: 60px;
-  border-bottom: 1px solid #ddd;
-  animation: 0.5s ease-out 0s 1 slideInFromUp;
-}
-
-.ant-menu-horizontal{
-  border-bottom-color:transparent;
-}
-
-.logo{
-  width:auto;
-  margin: 10px 16px 0px 16px;
-  float: left;
-  background: url('/assets/images/logo.svg');
-  background-color: rgba(255, 255, 255, 0.2);
-  background-size: 40px;
-  background-repeat: no-repeat;
-  padding-left: 45px;
-  line-height: 40px;
-  font-size: 20px;
-  text-transform: uppercase;
-
-  h1{
-    font-size:20px;
+header{
+  .logo{
+    width:100%;
+    margin: 10px;
+    float: left;
+    background: url('/assets/images/logo.svg');
+    background-color: rgba(255, 255, 255, 0.2);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding-left: 45px;
+    font-size: 20px;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      h1{
+        font-size: 30px;
+        text-decoration: none;
+        font-weight: lighter;
+        margin: 0 0 0 10px;
+        color: #555;
+      }
+    }
+  }
+  
+  nav{
+    float:left;
+    a{
+      padding:10px;
+      margin:10px;
+      border:1px dotted gray;
+      display:inline-block; 
+      text-decoration:none;
+      border-radius:5px;
+    }
   }
 }
-.ant-layout{
-  animation: 0.4s ease-out 0s 1 ContentslideInFromUp;
 
+main{
+  float:left;
+  display:block;
+  width:100%; 
+  border-top:1px solid #ccc;
+  h1{
+    font-weight: normal;
+  }
 }
-
-
-
+  
 @keyframes ContentslideInFromUp {
   0% {
       transform: translateY(-50px);
       opacity: 0.5
-
   }
   100% {
     opacity:1;
@@ -50,7 +60,6 @@
   0% {
       transform: translateY(-30px);
       opacity: 0.5
-
   }
   100% {
     opacity:1;

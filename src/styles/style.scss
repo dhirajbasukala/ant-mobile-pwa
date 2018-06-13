@@ -1,6 +1,3 @@
-// @import './fontawesome/fontawesome.scss';
-// @import './blokkfont.scss';
-
 body{
   background: whitesmoke;
   -webkit-font-smoothing: antialiased;
@@ -9,16 +6,14 @@ body{
     font-family: "Open Sans";
     color: #575757;
   }
+  // initially hide all fontawesome icons
   i.fab{
     visibility: hidden;
   }
+  // show fontawesomeicon once the font is floaded
   &.fontAwesomeLoaded{
     i.fab{
       visibility: visible;
-    }
+    } 
   }
-  &.blokk {
-     
-    font-family: 'BLOKK';
-}
 }

@@ -1,17 +1,7 @@
+import { combineReducers } from 'redux';
+import app from '../containers/App/reducer';
 
-const initialState = {
-  isLoading: false,
-  movies: []
-}
-const app = (state = initialState, action = {}) => {
-  switch(action.type){
-    case "FETCH_START": {
-      return { ...state, isLoading: true }
-    }
-    
-    default: 
-    return state;
-  }
-}
 
-export default app;
+const rootReducer = combineReducers({ app });
+
+export default rootReducer;
