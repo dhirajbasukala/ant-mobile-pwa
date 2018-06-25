@@ -13,7 +13,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const theme = require(`${webpackGlobConfig.APP_DIR}/js/config/antOverride`); // eslint-disable-line
+// const theme = require(`${webpackGlobConfig.APP_DIR}/js/config/antOverride`); // eslint-disable-line
 
 const prodConfig = merge(common, {
   mode: 'production',
@@ -45,7 +45,7 @@ const prodConfig = merge(common, {
               loader: 'less-loader',
               options: {
                 javascriptEnabled: true,
-                modifyVars: theme
+                // modifyVars: theme
               }
             }
           ]
