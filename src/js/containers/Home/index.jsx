@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import autoBind from "auto-bind";
-import   { Button }  from 'antd-mobile';
-// import 'antd/lib/button/style';
+import   Button from 'antd-mobile/lib/button';
+import 'antd-mobile/lib/button/style';
 import { getViewport } from "../../utils";
 
 class Home extends Component {

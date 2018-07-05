@@ -90,7 +90,7 @@ const devConfig = merge(common, {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: 'ENZA - Image Sorter',
+      title: 'PWA',
       template: `${webpackGlobConfig.APP_DIR}/index.html`,
       hash: true,
       minify: {
