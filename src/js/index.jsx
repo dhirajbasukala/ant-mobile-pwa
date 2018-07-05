@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AppContainer } from "react-hot-loader";
+import registerServiceWorker from './config/registerServiceWorker';
 
 import configureStore from './config/configureStore'
 import App from "./containers/App";
@@ -38,3 +39,6 @@ if (module.hot) {
     Renderer(HotApp);
   });
 }
+
+// handle service worker
+registerServiceWorker();
