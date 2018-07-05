@@ -1,10 +1,7 @@
 
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
-const PUBLIC_PATH = 'https://db.local:8080/';
-
-  
-
+const PUBLIC_PATH = 'https://db-pwa.netlify.com';
 
 const webpack = require('webpack');
 const merge = require('webpack-merge');

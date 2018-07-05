@@ -229,7 +229,7 @@ self.addEventListener('fetch', function(event) {
 
     // If shouldRespond is still false, check to see if this is a navigation
     // request, and if so, whether the URL matches navigateFallbackWhitelist.
-    var navigateFallback = 'https://db.local:8080/';
+    var navigateFallback = 'https://db-pwa.netlify.com';
     if (!shouldRespond &&
         navigateFallback &&
         (event.request.mode === 'navigate') &&
