@@ -12,8 +12,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 // const theme = require(`${webpackGlobConfig.APP_DIR}/js/config/antOverride`); // eslint-disable-line
+const PUBLIC_PATH = 'https://db.local:8080/';
+const theme = require(`${webpackGlobConfig.APP_DIR}/js/config/antOverride`); // eslint-disable-line
 
 const prodConfig = merge(common, {
   mode: 'production',
@@ -50,6 +53,22 @@ const prodConfig = merge(common, {
             }
           ]
         })
+      },
+      {
+        test: /\.(less)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            {
+              loader: 'less-loader',
+              options: {
+                javascriptEnabled: true,
+                modifyVars: theme
+              }
+            }
+          ]
+        })
       }
     ]
   },
@@ -75,7 +94,25 @@ const prodConfig = merge(common, {
       filename: 'style.css'
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
+    new SWPrecacheWebpackPlugin({
+    // By default, a cache-busting query parameter is appended to requests
+    // used to populate the caches, to ensure the responses are fresh.
+    // If a URL is already hashed by Webpack, then there is no concern
+    // about it being stale, and the cache-busting can be skipped.
+    cacheId: 'starlims',
+    dontCacheBustUrlsMatching: /\.\w{8}\./,
+    filename: 'service-worker.js',
+    logger(message) {
+      if (message.indexOf('Total precache size is') === 0) {
+        // This message occurs for every build and is a bit too noisy.
+      }
+    },
+    minify: false,
+    navigateFallback: `${PUBLIC_PATH}`,
+    staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/, /\.DS_Store/],
+    stripPrefix: '/Volumes/Work stuff/projects/react-sample-pwa/public/'
+  })
   ],
   optimization: {
     minimizer: [

@@ -9,7 +9,7 @@ class Page extends Component {
   render() {
     return (
       <div>
-        <h1> Sample Page</h1>
+        <h1> Sample Page test </h1>
       </div>
     );
   }

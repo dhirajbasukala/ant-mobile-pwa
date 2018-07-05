@@ -21,7 +21,7 @@ class AppComponent extends Component {
       <Fragment>
         <header className="header">
           <div className="logo">
-            <Link to="/"><h1>Project A</h1></Link>
+            <Link to="/"><h1>Project Abac</h1></Link>
           </div>
           <nav>
             <Link to="/">Home</Link>

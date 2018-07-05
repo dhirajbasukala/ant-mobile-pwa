@@ -12,7 +12,8 @@ const app = express();
 
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath
+    publicPath: webpackConfig.output.publicPath,
+    stats: 'minimal'
   })
 );
 

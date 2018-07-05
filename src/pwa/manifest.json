@@ -1,0 +1,15 @@
+{
+  "short_name": "Seed Handling",
+  "name": "ENZA Seed Handling PWA",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#b6ca32",
+  "background_color": "#ffffff"
+}

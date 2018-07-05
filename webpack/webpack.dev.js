@@ -12,6 +12,7 @@ const eslintLoader = {
 };
 
 const linter = process.env.LINTER === 'true' ? eslintLoader : {};
+const theme = require(`${webpackGlobConfig.APP_DIR}/js/config/antOverride`); // eslint-disable-line
 
 const devConfig = merge(common, {
   mode: 'development',
@@ -51,6 +52,24 @@ const devConfig = merge(common, {
           }
         ]
       },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true,
+              modifyVars: theme
+            }
+          }
+        ]
+      },
       linter
     ]
   },
@@ -64,6 +83,7 @@ const devConfig = merge(common, {
     historyApiFallback: true,
     hot: true,
     open: true,
+    stats: "errors-only"
   },
   stats: 'errors-only',
   plugins: [
