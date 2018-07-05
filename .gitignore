@@ -2,9 +2,6 @@
 .idea/
 node_modules/
 npm-debug.log
-log/
-test/tmp/
-src/client/dist/
 .vs/
 tags
 .DS_Store

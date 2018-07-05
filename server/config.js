@@ -4,7 +4,7 @@ const rootPath = path.normalize(`${__dirname}/..`);
 
 const app = {
   rootPath,
-  publicPath:`${rootPath}/dist`,
+  publicPath:`${rootPath}/public`,
   devPath: `${rootPath}/src`
 };
 

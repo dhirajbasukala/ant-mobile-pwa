@@ -18,7 +18,7 @@
   "plugins": [
     "react-hot-loader/babel",
     "transform-object-rest-spread",
-    ["import", { "libraryName": "antd-mobile", "style": true }]
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
 
   ]
 }

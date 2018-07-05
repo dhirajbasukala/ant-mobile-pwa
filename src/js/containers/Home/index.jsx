@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import autoBind from "auto-bind";
-import Button  from 'antd-mobile/lib/button';
-import 'antd-mobile/lib/button/style';
+import   { Button }  from 'antd-mobile';
+// import 'antd/lib/button/style';
 import { getViewport } from "../../utils";
 
 class Home extends Component {
@@ -36,7 +36,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home Sweet Home</h1>
+        <h1>PWA HOME</h1>
         <Button type="primary" size="small"> Ant mobile button</Button>
       </div>
     );
