@@ -86,6 +86,10 @@ const prodConfig = merge(common, {
       {
         from: `${webpackGlobConfig.APP_DIR}/pwa`,
         to: `${webpackGlobConfig.BUILD_DIR}/`
+      },
+      {
+        from: `${webpackGlobConfig.APP_DIR}/_redirects`,
+        to: `${webpackGlobConfig.BUILD_DIR}/_redirects`
       }
     ]),
     new ExtractTextPlugin({
