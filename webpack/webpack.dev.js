@@ -75,10 +75,6 @@ const devConfig = merge(common, {
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: {
-    proxy: {
-      '/api/*': 'http://127.0.0.1:8086',
-      historyApiFallback: true
-    },
     compress: true,
     historyApiFallback: true,
     hot: true,

@@ -71,12 +71,12 @@ const prodConfig = merge(common, {
       root: path.resolve(`${__dirname}/../..`)
     }),
     new HtmlWebpackPlugin({
-      title: 'ProQuote: A2',
+      title: 'PWA',
       template: `${webpackGlobConfig.APP_DIR}/index.prod.html`,
       hash: false,
-      minify: {
-        collapseWhitespace: true
-      }
+      // minify: {
+      //   collapseWhitespace: true
+      // }
     }),
     new CopyWebpackPlugin([
       {

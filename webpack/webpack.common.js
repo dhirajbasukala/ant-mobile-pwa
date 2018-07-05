@@ -55,22 +55,24 @@ const config = {
   },
   plugins: [
     new SimpleProgressPlugin(),
-    // new FaviconsWebpackPlugin({
-    //   logo: `${webpackGlobConfig.APP_DIR}/assets/images/logo.svg`,
-    //   emitStats: false,
-    //   icons: {
-    //     android: false,
-    //     appleIcon: false,
-    //     appleStartup: false,
-    //     coast: false,
-    //     favicons: true,
-    //     firefox: false,
-    //     opengraph: false,
-    //     twitter: false,
-    //     yandex: false,
-    //     windows: false
-    //   }
-    // })
+    new FaviconsWebpackPlugin({
+      logo: `${webpackGlobConfig.APP_DIR}/assets/images/logo.svg`,
+      emitStats: false,
+      inject: true,
+      persistentCache: true,
+      icons: {
+        android: false,
+        appleIcon: false,
+        appleStartup: false,
+        coast: false,
+        favicons: true,
+        firefox: false,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
+    })
   ]
 };
 
