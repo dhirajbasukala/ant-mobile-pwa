@@ -73,10 +73,10 @@ const prodConfig = merge(common, {
     new HtmlWebpackPlugin({
       title: 'PWA',
       template: `${webpackGlobConfig.APP_DIR}/index.prod.html`,
-      hash: false,
-      // minify: {
-      //   collapseWhitespace: true
-      // }
+      hash: true,
+      minify: {
+        collapseWhitespace: true
+      }
     }),
     new CopyWebpackPlugin([
       {
