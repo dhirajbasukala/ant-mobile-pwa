@@ -73,7 +73,7 @@ const prodConfig = merge(common, {
     new HtmlWebpackPlugin({
       title: 'ProQuote: A2',
       template: `${webpackGlobConfig.APP_DIR}/index.prod.html`,
-      hash: true,
+      hash: false,
       minify: {
         collapseWhitespace: true
       }
