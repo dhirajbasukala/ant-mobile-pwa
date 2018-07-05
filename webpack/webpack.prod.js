@@ -82,13 +82,17 @@ const prodConfig = merge(common, {
       {
         from: `${webpackGlobConfig.APP_DIR}/assets`,
         to: `${webpackGlobConfig.BUILD_DIR}/assets`
+      },
+      {
+        from: `${webpackGlobConfig.APP_DIR}/pwa`,
+        to: `${webpackGlobConfig.BUILD_DIR}/`
       }
     ]),
     new ExtractTextPlugin({
       filename: 'style.css'
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new SWPrecacheWebpackPlugin({
       // By default, a cache-busting query parameter is appended to requests
       // used to populate the caches, to ensure the responses are fresh.

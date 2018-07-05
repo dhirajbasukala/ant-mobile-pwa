@@ -1,9 +1,9 @@
 {
-  "short_name": "Seed Handling",
-  "name": "ENZA Seed Handling PWA",
+  "short_name": "PWA Sample",
+  "name": "Sample PWA",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "assets/images/logo.svg",
       "sizes": "512x512",
       "type": "image/png"
     }
