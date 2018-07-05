@@ -89,7 +89,7 @@ const prodConfig = merge(common, {
       },
       {
         from: `${webpackGlobConfig.APP_DIR}/_redirects`,
-        to: `${webpackGlobConfig.BUILD_DIR}/_redirects`
+        to: `${webpackGlobConfig.BUILD_DIR}/`
       }
     ]),
     new ExtractTextPlugin({
